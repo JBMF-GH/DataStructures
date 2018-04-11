@@ -7,8 +7,6 @@ namespace jc
 	template<typename T, size_t N>
 	Array<T, N>::Array()
 	{
-		//for (size_t i{ 0 }; i < N; i++)
-			//data[i] = 0;
 		for (auto& d : data)
 			d = 0;
 	}
