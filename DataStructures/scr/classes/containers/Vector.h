@@ -43,6 +43,10 @@ namespace jc
 		const size_t size() const;
 
 		// Modifiers
+		void clear();
+		void pop_back();
+		void push_back(const T& value);
+		void resize(size_t count);
 
 		// Non-member functions
 		template<typename T>
