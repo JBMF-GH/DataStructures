@@ -7,8 +7,18 @@ namespace jc
 	template<typename T, size_t N>
 	Array<T, N>::Array()
 	{
-		for (size_t i{ 0 }; i < N; i++)
-			data[i] = 0;
+		//for (size_t i{ 0 }; i < N; i++)
+			//data[i] = 0;
+		for (auto& d : data)
+			d = 0;
+	}
+
+	template<typename T, size_t N>
+	Array<T, N>::Array(const std::initializer_list<T>& list)
+	{
+		int count{ 0 };
+		for (auto& element : list)
+			data[count++] = element;
 	}
 
 	template<typename T, size_t N>
@@ -30,7 +40,7 @@ namespace jc
 	}
 
 	template<typename T, size_t N>
-	T* Array<T, N>::begin() const
+	const T* Array<T, N>::begin() const
 	{
 		return data;
 	}
@@ -42,7 +52,7 @@ namespace jc
 	}
 
 	template<typename T, size_t N>
-	T* Array<T, N>::end() const
+	const T* Array<T, N>::end() const
 	{
 		return data + N;
 	}
