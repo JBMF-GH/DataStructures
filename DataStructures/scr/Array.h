@@ -12,6 +12,10 @@ namespace jc
 		Array();
 		T& back();
 		const T& back() const;
+		T* begin();
+		T* begin() const;
+		T* end();
+		T* end() const;
 		T& front();
 		const T& front() const;
 		size_t length() const;

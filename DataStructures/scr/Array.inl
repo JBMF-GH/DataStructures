@@ -24,6 +24,30 @@ namespace jc
 	}
 
 	template<typename T, size_t N>
+	T* Array<T, N>::begin()
+	{
+		return data;
+	}
+
+	template<typename T, size_t N>
+	T* Array<T, N>::begin() const
+	{
+		return data;
+	}
+
+	template<typename T, size_t N>
+	T* Array<T, N>::end()
+	{
+		return data + N;
+	}
+
+	template<typename T, size_t N>
+	T* Array<T, N>::end() const
+	{
+		return data + N;
+	}
+
+	template<typename T, size_t N>
 	T& Array<T, N>::front()
 	{
 		return data[0];
