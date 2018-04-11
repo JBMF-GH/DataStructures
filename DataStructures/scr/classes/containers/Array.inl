@@ -22,6 +22,18 @@ namespace jc
 
 	// Element access
 	template<typename T, size_t N>
+	T& Array<T, N>::at(size_t index)
+	{
+		// TODO: insert return statement here
+	}
+
+	template<typename T, size_t N>
+	const T& Array<T, N>::at(size_t index) const
+	{
+		// TODO: insert return statement here
+	}
+
+	template<typename T, size_t N>
 	T& Array<T, N>::back()
 	{
 		return m_data[N - 1];

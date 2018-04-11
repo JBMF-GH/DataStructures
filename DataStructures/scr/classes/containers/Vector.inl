@@ -32,6 +32,17 @@ namespace jc
 	}
 
 	template<typename T>
+	Vector<T>::Vector(const std::initializer_list<T>& list)
+		: m_size{ list.size() }
+	{
+		m_data = new T[size()];
+
+		size_t count{ 0 };
+		for (auto& element : list)
+			m_data[count++] = element;
+	}
+
+	template<typename T>
 	Vector<T>::~Vector()
 	{
 		delete[] m_data;
@@ -54,7 +65,57 @@ namespace jc
 		return *this;
 	}
 
+	template<typename T>
+	void Vector<T>::assign(size_t count, const T& value)
+	{
+		if (size() != count)
+		{
+			m_size = count;
+			delete[] m_data;
+			m_data = new T[size()];
+		}
+
+		for (size_t i{ 0 }; i < size(); i++)
+			m_data[i] = value;
+	}
+
 	// Element access
+	template<typename T>
+	T& Vector<T>::at(size_t index)
+	{
+		// TODO: insert return statement here
+	}
+
+	template<typename T>
+	const T& Vector<T>::at(size_t index) const
+	{
+		// TODO: insert return statement here
+	}
+
+	template<typename T>
+	T& Vector<T>::back()
+	{
+		return m_data[size() - 1];
+	}
+
+	template<typename T>
+	const T& Vector<T>::back() const
+	{
+		return m_data[size() - 1];
+	}
+
+	template<typename T>
+	T& Vector<T>::front()
+	{
+		return m_data[0];
+	}
+
+	template<typename T>
+	const T& Vector<T>::front() const
+	{
+		return m_data[0];
+	}
+
 	template<typename T>
 	T& Vector<T>::operator[](size_t index)
 	{
@@ -95,6 +156,14 @@ namespace jc
 	}
 
 	// Capacity
+	template<typename T>
+	bool Vector<T>::empty() const
+	{
+		if(begin() == end())
+			return true;
+		return false;
+	}
+
 	template<typename T>
 	const size_t Vector<T>::size() const
 	{
