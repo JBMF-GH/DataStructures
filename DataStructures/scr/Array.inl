@@ -12,6 +12,18 @@ namespace jc
 	}
 
 	template<typename T, size_t N>
+	T& Array<T, N>::at()
+	{
+		// TODO: insert return statement here
+	}
+
+	template<typename T, size_t N>
+	const T& Array<T, N>::at() const
+	{
+		// TODO: insert return statement here
+	}
+
+	template<typename T, size_t N>
 	T& Array<T, N>::back()
 	{
 		return data[N - 1];
@@ -21,6 +33,26 @@ namespace jc
 	const T& Array<T, N>::back() const
 	{
 		return data[N - 1];
+	}
+
+	template<typename T, size_t N>
+	T* Array<T, N>::begin()
+	{
+		return data;
+	}
+
+	template<typename T, size_t N>
+	T* Array<T, N>::end()
+	{
+		return (data + N);
+	}
+
+	template<typename T, size_t N>
+	const bool Array<T, N>::empty() const
+	{
+		if (N == 0)
+			return true;
+		return false;
 	}
 
 	template<typename T, size_t N>
