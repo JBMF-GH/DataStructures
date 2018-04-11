@@ -18,13 +18,21 @@
     <ClCompile Include="scr\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="scr\Array.inl">
+    <ClCompile Include="scr\classes\containers\Array.inl">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="scr\Array.h">
+    <ClInclude Include="scr\classes\containers\Array.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="scr\classes\containers\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="scr\classes\containers\Vector.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

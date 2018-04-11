@@ -1,6 +1,5 @@
 #ifdef ARRAY_H
 
-#include <iostream>
 #include <cassert>
 
 namespace jc
@@ -10,7 +9,7 @@ namespace jc
 	Array<T, N>::Array()
 	{
 		for (size_t i{ 0 }; i < size(); i++)
-			data[i] = 0;
+			m_data[i] = 0;
 	}
 
 	template<typename T, size_t N>
@@ -18,71 +17,71 @@ namespace jc
 	{
 		int count{ 0 };
 		for (auto& element : list)
-			data[count++] = element;
+			m_data[count++] = element;
 	}
 
 	// Element access
 	template<typename T, size_t N>
 	T& Array<T, N>::back()
 	{
-		return data[N - 1];
+		return m_data[N - 1];
 	}
 
 	template<typename T, size_t N>
 	const T& Array<T, N>::back() const
 	{
-		return data[N - 1];
+		return m_data[N - 1];
 	}
 
 	template<typename T, size_t N>
 	T& Array<T, N>::front()
 	{
-		return data[0];
+		return m_data[0];
 	}
 
 	template<typename T, size_t N>
 	const T& Array<T, N>::front() const
 	{
-		return data[0];
+		return m_data[0];
 	}
 
 	template<typename T, size_t N>
 	T& Array<T, N>::operator[](size_t index)
 	{
 		assert(index >= 0 && index < N);
-		return data[index];
+		return m_data[index];
 	}
 
 	template<typename T, size_t N>
 	const T& Array<T, N>::operator[](size_t index) const
 	{
 		assert(index >= 0 && index < N);
-		return data[index];
+		return m_data[index];
 	}
 
 	// Iterators
 	template<typename T, size_t N>
 	T* Array<T, N>::begin()
 	{
-		return data;
+		return m_data;
 	}
 
 	template<typename T, size_t N>
 	const T* Array<T, N>::begin() const
 	{
-		return data;
+		return m_data;
 	}
 
 	template<typename T, size_t N>
 	T* Array<T, N>::end()
 	{
-		return data + N;
+		return m_data + N;
 	}
 
 	template<typename T, size_t N>
 	const T* Array<T, N>::end() const
 	{
-		return data + N;
+		return m_data + N;
 	}
 
 	// Capacity

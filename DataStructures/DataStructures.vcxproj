@@ -130,11 +130,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="scr\Array.inl" />
+    <ClCompile Include="scr\classes\containers\Array.inl" />
     <ClCompile Include="scr\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="scr\Array.h" />
+    <ClInclude Include="scr\classes\containers\Array.h" />
+    <ClInclude Include="scr\classes\containers\Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="scr\classes\containers\Vector.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

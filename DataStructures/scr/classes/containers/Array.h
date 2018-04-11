@@ -9,7 +9,7 @@ namespace jc
 	class Array
 	{
 	private:
-		T data[N];
+		T m_data[N];
 
 	public:
 		// Constructors
@@ -17,6 +17,8 @@ namespace jc
 		Array(const std::initializer_list<T>& list);
 
 		// Element access
+		T& at(size_t index);
+		const T& at(size_t index) const;
 		T& back();
 		const T& back() const;
 		T& front();
