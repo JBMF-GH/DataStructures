@@ -10,24 +10,29 @@ namespace jc
 	{
 	private:
 		T data[N];
+
 	public:
+		// Constructors
 		Array();
 		Array(const std::initializer_list<T>& list);
 
+		// Element access
+		T& back();
+		const T& back() const;
+		T& front();
+		const T& front() const;
+		T& operator[](size_t index);
+		const T& operator[](size_t index) const;
+
+		// Iterators
 		T* begin();
 		const T* begin() const;
 		T* end();
 		const T* end() const;
 
-		T& back();
-		const T& back() const;
-		T& front();
-		const T& front() const;
-
-		size_t length() const;
-
-		T& operator[](size_t index);
-		const T& operator[](size_t index) const;
+		// Capacity
+		const bool empty() const;
+		size_t size() const;
 	};
 }
 
